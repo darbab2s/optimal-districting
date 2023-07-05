@@ -20,11 +20,11 @@ QUBO:
 ```math
 \begin{flalign}
 \text{Minimiere } &\sum_{i \in V} \sum_{j \in V} d_{ij} x_{ij}^2 \\
-&+ \lambda_1 * ( \sum_{j \in V} x_{j j} - p ) \\ 
-&+ \lambda_2 * ( \sum_{j \in V} x_{ij} - 1 ) \\
-&+ \lambda_3 * ( - \sum_{i \in V} w_{i}^{(a)} x_{ij} + (1-\tau^{(a)} ) \mu^{(a)} x_{j j} ) \\
-&+ \lambda_4 * ( \sum_{i \in V} w_{i}^{(a)} x_{ij} - (1+\tau^{(a)}) \mu^{(a)} x_{j j}  ) \\
-&+ \lambda_5 * ( x_{ij} - x_{ii}  ) \\
+&+ \lambda_1 * ( \sum_{j \in V} x_{j j} - p )^2 \\ 
+&+ \lambda_2 * ( \sum_{j \in V} x_{ij} - 1 )^2 \\
+&+ \lambda_3 * ( - \sum_{i \in V} w_{i}^{(a)} x_{ij} + (1-\tau^{(a)} ) \mu^{(a)} x_{j j} )^2 \\
+&+ \lambda_4 * ( \sum_{i \in V} w_{i}^{(a)} x_{ij} - (1+\tau^{(a)}) \mu^{(a)} x_{j j}  )^2 \\
+&+ \lambda_5 * ( x_{ij} - x_{ii}  )^2 \\
 &x_{i j}  \in\{0,1\} &  i, j \in V
 \end{flalign}
 ```
