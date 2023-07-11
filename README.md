@@ -30,12 +30,12 @@ Lagrange Relaxation leads to:
 Expanded and Ordered:
 ```math
 \begin{flalign}
-\text{Minimiere } &\sum_{i \in V} \sum_{j \in V} d_{ij} x_{ij}^2 \\
-&+ \lambda_1 * ( \sum_{j \in V} x_{j j}^2 - p^2 + 2\sum_{i < j} x_{i i} x_{j j}  - 2p \sum_{j \in V} x_{j j} )\\ 
-&+ \lambda_2 * ( \sum_{j \in V} x_{ij}^2 - 1^2 + 2\sum_{k < j} x_{ij} x_{ik}  - 2\sum_{j \in V} x_{ij}) \\
-&+ \lambda_3 * ( \sum_{i \in V} (w_{i} x_{ij})^2 + ((1-\tau ) \mu x_{j j})^2 + 2*\sum_{h < i} (w_{i} x_{ij})(w_{h} x_{hj})   - (1-\tau ) \mu w_{j j} \sum_{i \in V} (w_{i} x_{ij}) ) \\
-&+ \lambda_4 * ( \sum_{i \in V} (w_{i} x_{ij})^2 + ((1+\tau ) \mu x_{j j})^2 + 2*\sum_{h < i} (w_{i} x_{ij})(w_{h} x_{hj})  -  (1+\tau ) \mu w_{j j} \sum_{i \in V} (w_{i} x_{ij})) \\
-&+ \lambda_5 * ( x_{ij}^2 + x_{ii}^2 -2*x_{ii}x_{ij}   ) \\
+\text{Minimiere } &\sum_{i \in V} \sum_{j \in V} d_{ij} x_{ij} \\
+&+ \lambda_1 * \bigg( \Big(\sum_{j \in V} x_{j j}^2 + 2\sum_{i < j} x_{i i} x_{j j} \Big)  - 2p \sum_{j \in V} x_{j j} + p^2 \bigg)\\ 
+&+ \lambda_2 * \bigg( \Big( \sum_{j \in V} x_{ij}^2 + 2\sum_{k < j} x_{ij} x_{ik} \Big)  - 2\sum_{j \in V} x_{ij} + 1 \bigg) \\
+&+ \lambda_3 * \bigg( \Big( \sum_{i \in V} w_{i}^2 x_{ij}^2  + 2\sum_{h < i} w_{i}w_{h} x_{ij} x_{hj} \Big)   - 2\mu (1 - \tau) x_{j j} \sum_{i \in V} w_{i} x_{ij} + (1 - \tau)^2 \mu^{{(a)}^2} x_{j j}^2 \bigg) \\
+&+ \lambda_4 * \bigg( \Big( \sum_{i \in V} w_{i}^2 x_{ij}^2  + 2\sum_{h < i} w_{i}w_{h} x_{ij} x_{hj} \Big)   - 2\mu (1 + \tau) x_{j j} \sum_{i \in V} w_{i} x_{ij} + (1 + \tau)^2 \mu^{{(a)}^2} x_{j j}^2 \bigg) \\
+&+ \lambda_5 * ( x_{ij}^2 + x_{ii}^2 -2x_{ii}x_{ij}   ) \\
 &x_{i j}  \in\{0,1\} &  i, j \in V
 \end{flalign}
 ```
